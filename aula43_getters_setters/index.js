@@ -1,33 +1,33 @@
-function Produto(nome,preco,estoque){
+function Produto(nome, preco, estoque) {
     this.nome = nome;
     this.preco = preco;
 
     let estoquePrivado = estoque;
 
-    Object.defineProperty(this,'estoque',{
-        enumerable:true,
-        configurable:true,
-        get: ()=>{
+    Object.defineProperty(this, 'estoque', {
+        enumerable: true,
+        configurable: true,
+        get: () => {
             return estoquePrivado;
         },
-        set:(valor)=>{
-            if(typeof valor !== 'number')
-            throw new TypeError('Mensagem de erro!');
-                // return console.log('Bad value');
+        set: (valor) => {
+            if (typeof valor !== 'number')
+                throw new TypeError('Mensagem de erro!');
+            // return console.log('Bad value');
             estoquePrivado = valor;
         }
     });
- 
+
 }
 
 
-function criaProduto(nome){//Função fábrica
+function criaProduto(nome) { //Função fábrica
     return {
-        get nome(){
+        get nome() {
             return nome;
         },
-        set nome(valor){
-            valor = valor.replace('coisa.','');
+        set nome(valor) {
+            valor = valor.replace('coisa.', '');
             nome = valor;
         }
     }
@@ -41,4 +41,3 @@ function criaProduto(nome){//Função fábrica
 const p2 = criaProduto('Camiseta');
 // p2.nome = 'Qualquer coisa.';
 console.log(p2.nome);
- 
