@@ -47,3 +47,4 @@ console.log(s1);
 
 const t1 = new Tablet('iPad',true);
 t1.ligar();
+t1.ligar();
