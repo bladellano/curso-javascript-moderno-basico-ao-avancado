@@ -61,3 +61,7 @@ const p1 = new Pessoa('Caio', 'Silva');
 p1.nomeCompleto = 'Caio Dellano Nunes da Silva';
 console.log(p1.nome, p1.sobrenome);
 console.log(p1.sobrenome);
+
+const p2 = new Pessoa('asdasd', 'dsdasdasd');
+
+console.log(p2);
